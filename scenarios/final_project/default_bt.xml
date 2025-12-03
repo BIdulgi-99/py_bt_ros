@@ -8,13 +8,11 @@
       <Fallback>
         
         <Sequence>
-          <RetryUntilSuccessful num_attempts="60">
-            <ReceiveParcel/>
-          </RetryUntilSuccessful>
-
+          
           <WaitForQRPose/>
+          
           <MoveToDelivery/>
-          <DropoffParcel/>
+
         </Sequence>
 
         <MoveToCharge/>
@@ -27,14 +25,6 @@
     <Action ID="MoveToCharge" editable="true"/>
     <Action ID="MoveToPickup" editable="true"/>
     <Action ID="MoveToDelivery" editable="true"/>
-
-    <Condition ID="ReceiveParcel" editable="true"/>
-    <Condition ID="DropoffParcel" editable="true"/>
-    <Condition ID="WaitForQRPose" editable="true"/>
-
-    <Decorator ID="RetryUntilSuccessful" editable="true">
-      <input_port name="num_attempts" default="1" type="int"/>
-    </Decorator>
+    <Action ID="WaitForQRPose" editable="true"/>
   </TreeNodesModel>
-
 </root>

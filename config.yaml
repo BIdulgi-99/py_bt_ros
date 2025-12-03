@@ -11,3 +11,27 @@ bt_runner:
     screen_width: 600 
     screen_height: 600 
   profiling_mode: False
+
+# [통합된 QR 시스템 설정]
+qr_system:
+  # LIMO 카메라 토픽
+  camera_topic: "/camera/color/image_raw"
+  
+  # 이미지 처리 최적화 (가로 폭 리사이즈)
+  process_width: 640
+
+  # 지역별 키워드 (QR 데이터 매칭용)
+  areas:
+    SEOUL: ["서울특별시", "서울시"]
+    GYEONGGI: ["경기도"]
+
+  # 지역별 목표 좌표 (Map 프레임 기준)
+  locations:
+    SEOUL:
+      x: -6.326
+      y: 3.209
+      yaw: 90.0
+    GYEONGGI:
+      x: -4.198
+      y: 0.200
+      yaw: 0.0
